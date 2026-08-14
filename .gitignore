@@ -1,0 +1,21 @@
+# Downloaded audio is intentionally kept out of Git.
+music/*
+!music/.gitkeep
+
+# Interrupted downloads and local reports
+*.part
+*.log
+*.tmp
+
+# Python/tool caches
+__pycache__/
+.cache/
+.venv/
+venv/
+
+# Local environment and editor files
+.env
+.DS_Store
+.directory
+.vscode/
+.idea/

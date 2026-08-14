@@ -1,19 +1,22 @@
-# Classical Playlist — downloads legais
+# Playlist clássica — downloads legais
+
+Documentação em inglês: [README.en.md](README.en.md).
 
 Inventário de 50 faixas conforme a seleção solicitada. Obra em domínio público não implica que a gravação seja livre. A [FAQ do Musopen](https://musopen.org/faq/) explica que composição e gravação têm direitos distintos; o [catálogo de gravações](https://musopen.org/music/) oferece material livre, mas cada registro precisa ser identificado.
 
 ## Estado atual
 
-A pesquisa encontrou um catálogo legal confiável (Musopen), mas não um URL direto verificável para cada gravação específica sem escolher uma interpretação concreta. Por isso, 48 faixas estão como no_direct_url e Barber/Albinoni como copyright_review. O script não baixa nenhuma faixa até que download_url, licença e qualidade sejam preenchidos no CSV.
+A pesquisa encontrou um catálogo legal confiável (Musopen), mas não um URL direto verificável para cada gravação específica sem escolher uma interpretação concreta. Por isso, 48 faixas estão como `no_direct_url` e Barber/Albinoni como `copyright_review`. O script não baixa nenhuma faixa até que `download_url`, licença e qualidade sejam preenchidos no CSV.
 
-Não foram inventados URLs diretos. Faixas com páginas dinâmicas permanecem no inventário para revisão.
+Não foram inventados URLs diretos. Faixas com páginas dinâmicas, autenticação ou seleção via JavaScript permanecem no inventário para revisão. A pasta `music/` é ignorada pelo Git para não publicar arquivos de áudio potencialmente grandes.
 
 ## Uso
 
+    cd classical-playlist
     ./download-classicos.sh
     ./verify.sh
 
-O download usa curl (fallback wget), arquivos temporários .part, validação contra HTML/JSON e não sobrescreve arquivos existentes. verify.sh usa ffprobe quando disponível.
+O download usa `curl` (fallback `wget`), arquivos temporários `.part`, tratamento de erros HTTP, validação contra HTML/JSON e não sobrescreve arquivos existentes. `verify.sh` usa `ffprobe` quando disponível. Apenas os estados `ready` e `mp3_only` entram na fila de download.
 
 ## Campos e status
 
@@ -73,4 +76,3 @@ playlist.csv e playlist.json registram compositor, obra, movimento, intérprete,
 | 48 | Händel — Messiah — Hallelujah | MP3 | Musopen catalog; recording license not yet verified | [Musopen](https://musopen.org/music/) | no_direct_url |
 | 49 | Holst — The Planets — Mars, the Bringer of War | FLAC | Musopen catalog; recording license not yet verified | [Musopen](https://musopen.org/music/) | no_direct_url |
 | 50 | Holst — The Planets — Jupiter, the Bringer of Jollity | FLAC | Musopen catalog; recording license not yet verified | [Musopen](https://musopen.org/music/) | no_direct_url |
-
