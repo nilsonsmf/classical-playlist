@@ -10,7 +10,7 @@ while IFS=$'\x1f' read -r number _composer _title _movement _performer _source _
   [[ "$number" == "track_number" || -z "$number" ]] && continue
   path="$DEST/$filename"
   if [[ ! -f "$path" ]]; then
-    printf '[%s] AUSENTE (%s): %s\n' "$number" "$status" "$filename"
+    printf '[%s] MISSING (%s): %s\n' "$number" "$status" "$filename"
     ((missing++))
     continue
   fi
@@ -19,7 +19,7 @@ while IFS=$'\x1f' read -r number _composer _title _movement _performer _source _
   ext=${filename##*.}
   printf '[%s] %s bytes | %s | .%s | %s\n' "$number" "$size" "$mime" "$ext" "$filename"
   if (( size < 16384 )); then
-    echo "  AVISO: arquivo menor que 16 KiB" >&2
+    echo "  WARNING: file is smaller than 16 KiB" >&2
   fi
   if command -v ffprobe >/dev/null 2>&1; then
     ffprobe -v error -show_entries stream=codec_name,bit_rate,sample_rate,channels -show_entries format=duration -of 'default=noprint_wrappers=1' -- "$path" 2>&1 | sed 's/^/  /'
@@ -35,7 +35,7 @@ PY
 )
 
 if (( missing )); then
-  echo "$missing faixa(s) ausente(s). Faixas não verificadas não são baixadas." >&2
+  echo "$missing track(s) missing. Unverified tracks are not downloaded." >&2
   exit 1
 fi
-echo "Todas as 50 faixas existem."
+echo "All 50 tracks are present."

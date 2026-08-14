@@ -18,6 +18,7 @@ No direct URLs were fabricated. Tracks whose sites require dynamic selection, Ja
 
 - `playlist.csv`: editable source of truth for the download queue;
 - `playlist.json`: the same metadata as JSON;
+- `resolve-links.py`: searches Internet Archive and adds only audio files with explicit compatible rights metadata;
 - `download-classicos.sh`: safe downloader using `curl` (or `wget`), `.part` files, HTTP failure handling, and an HTML/JSON response check;
 - `verify.sh`: checks files, MIME types, sizes, extensions, and `ffprobe` metadata when available;
 - `music/`: downloaded audio (ignored by Git).
@@ -28,11 +29,14 @@ Linux, Bash, Python 3, and either `curl` or `wget` are required. The `file` comm
 
 ```bash
 cd classical-playlist
+python3 resolve-links.py
 ./download-classicos.sh
 ./verify.sh
 ```
 
 The downloader skips every status other than `ready` and `mp3_only`, never overwrites an existing file, and moves a `.part` file into place only after a successful download.
+
+`resolve-links.py` is intentionally conservative. It does not guess URLs and leaves tracks unchanged when Internet Archive has no explicit compatible rights metadata or no matching audio file. Review the generated metadata before downloading.
 
 ## Metadata and legal review
 

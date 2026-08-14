@@ -22,6 +22,8 @@ O download usa `curl` (fallback `wget`), arquivos temporários `.part`, tratamen
 
 playlist.csv e playlist.json registram compositor, obra, movimento, intérprete, fonte, página, URL direta, licença, formato, qualidade, nome e status. Estados: ready, mp3_only, no_direct_url, copyright_review e unavailable.
 
+`resolve-links.py` pesquisa o Internet Archive e preenche somente arquivos de áudio com metadados explícitos de licença compatível. Ele não inventa URLs; revise o CSV antes de executar o download.
+
 ## Tabela resumida
 
 | # | Faixa | Formato | Licença/observação | Fonte | Status |

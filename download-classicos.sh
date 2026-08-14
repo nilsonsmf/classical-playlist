@@ -11,44 +11,44 @@ if command -v curl >/dev/null 2>&1; then
 elif command -v wget >/dev/null 2>&1; then
   DOWNLOADER=wget
 else
-  echo "Erro: instale curl ou wget." >&2
+  echo "Error: install curl or wget." >&2
   exit 1
 fi
 
-command -v python3 >/dev/null 2>&1 || { echo "Erro: python3 é necessário para ler CSV com segurança." >&2; exit 1; }
+command -v python3 >/dev/null 2>&1 || { echo "Error: python3 is required to parse CSV safely." >&2; exit 1; }
 
-echo "Fonte: $CSV"
-echo "Destino: $DEST"
+echo "Source: $CSV"
+echo "Destination: $DEST"
 
 while IFS=$'\x1f' read -r number _composer _title _movement _performer _source _page url _license format _quality filename status; do
   [[ "$number" == "track_number" || -z "$number" ]] && continue
   if [[ "$status" != "ready" && "$status" != "mp3_only" ]]; then
-    printf '[%s] pulando (%s): %s\n' "$number" "$status" "$filename"
+    printf '[%s] skipping (%s): %s\n' "$number" "$status" "$filename"
     continue
   fi
   if [[ -z "$url" ]]; then
-    printf '[%s] pulando (sem URL direta): %s\n' "$number" "$filename"
+    printf '[%s] skipping (no direct URL): %s\n' "$number" "$filename"
     continue
   fi
 
   target="$DEST/$filename"
   part="$target.part"
   if [[ -s "$target" ]]; then
-    printf '[%s] já existe: %s\n' "$number" "$filename"
+    printf '[%s] already exists: %s\n' "$number" "$filename"
     continue
   fi
   rm -f -- "$part"
-  printf '[%s] baixando: %s\n' "$number" "$filename"
+  printf '[%s] downloading: %s\n' "$number" "$filename"
   if [[ "$DOWNLOADER" == curl ]]; then
     curl --fail --location --retry 3 --continue-at - --output "$part" "$url"
   else
     wget --continue --tries=3 --output-document="$part" "$url"
   fi
 
-  [[ -s "$part" ]] || { echo "Download vazio: $url" >&2; rm -f -- "$part"; continue; }
+  [[ -s "$part" ]] || { echo "Empty download: $url" >&2; rm -f -- "$part"; continue; }
   mime=$(file --brief --mime-type -- "$part" 2>/dev/null || true)
   if [[ "$mime" == text/html* || "$mime" == application/json* ]]; then
-    echo "Resposta não é áudio ($mime): $url" >&2
+    echo "Response is not audio ($mime): $url" >&2
     rm -f -- "$part"
     continue
   fi
@@ -63,4 +63,4 @@ with open(sys.argv[1], newline='', encoding='utf-8') as f:
 PY
 )
 
-echo "Concluído."
+echo "Completed."
