@@ -26,7 +26,7 @@ LICENSE_RE = re.compile(r"creativecommons|public.?domain|cc0|license.?url", re.I
 
 def get_json(url: str) -> dict:
     req = Request(url, headers={"User-Agent": "classical-playlist/1.0"})
-    with urlopen(req, timeout=30) as response:
+    with urlopen(req, timeout=8) as response:
         return json.load(response)
 
 
@@ -68,6 +68,14 @@ def resolve(row: dict) -> tuple[str, str, str, str] | None:
     return None
 
 
+def save(rows: list[dict]) -> None:
+    with CSV_PATH.open("w", newline="", encoding="utf-8") as output:
+        writer = csv.DictWriter(output, fieldnames=rows[0].keys())
+        writer.writeheader()
+        writer.writerows(rows)
+    JSON_PATH.write_text(json.dumps(rows, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
 def main() -> int:
     rows = list(csv.DictReader(CSV_PATH.open(newline="", encoding="utf-8")))
     changed = 0
@@ -87,14 +95,11 @@ def main() -> int:
                     "license": license_text, "format": quality.split(" ", 1)[0],
                     "quality": quality, "status": "ready" if quality.startswith("FLAC") else "mp3_only"})
         changed += 1
-        print(f"[{index}] encontrado: {url}")
+        print(f"[{index}] found: {url}")
+        save(rows)
         time.sleep(0.25)
 
-    with CSV_PATH.open("w", newline="", encoding="utf-8") as output:
-        writer = csv.DictWriter(output, fieldnames=rows[0].keys())
-        writer.writeheader()
-        writer.writerows(rows)
-    JSON_PATH.write_text(json.dumps(rows, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    save(rows)
     print(f"Updated {changed} track(s). Review the CSV before downloading.")
     return 0
 

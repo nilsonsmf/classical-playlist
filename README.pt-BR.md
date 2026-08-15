@@ -6,7 +6,7 @@ Inventário de 50 faixas conforme a seleção solicitada. Obra em domínio públ
 
 ## Estado atual
 
-A pesquisa encontrou um catálogo legal confiável (Musopen), mas não um URL direto verificável para cada gravação específica sem escolher uma interpretação concreta. Por isso, 48 faixas estão como `no_direct_url` e Barber/Albinoni como `copyright_review`. O script não baixa nenhuma faixa até que `download_url`, licença e qualidade sejam preenchidos no CSV.
+A pesquisa encontrou um catálogo legal confiável (Musopen) e quatro gravações com URLs explícitos no Internet Archive. Restam 46 faixas como `no_direct_url`; Barber/Albinoni continuam como `copyright_review`. O script só baixa quando `download_url`, licença e qualidade estão preenchidos no CSV.
 
 Não foram inventados URLs diretos. Faixas com páginas dinâmicas, autenticação ou seleção via JavaScript permanecem no inventário para revisão. A pasta `music/` é ignorada pelo Git para não publicar arquivos de áudio potencialmente grandes.
 

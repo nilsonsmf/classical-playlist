@@ -8,9 +8,9 @@ Portuguese documentation: [README.pt-BR.md](README.pt-BR.md).
 
 The catalog pages are useful, but a specific recording, license, and direct audio URL still have to be selected and verified for each track. Therefore:
 
-- 48 tracks are `no_direct_url`;
+- 46 tracks remain `no_direct_url`;
 - Albinoni’s *Adagio in G minor* and Barber’s *Adagio for Strings* are `copyright_review`;
-- no track is downloaded automatically until its `download_url`, license, and quality are documented.
+- 4 tracks now have explicit Internet Archive URLs and were downloaded to `music/`.
 
 No direct URLs were fabricated. Tracks whose sites require dynamic selection, JavaScript, or authentication remain in the inventory for manual review.
 
