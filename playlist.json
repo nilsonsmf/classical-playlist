@@ -159,7 +159,7 @@
     "source_page": "https://musopen.org/music/",
     "download_url": "",
     "license": "Musopen catalog; recording license not yet verified",
-    "format": "FLAC",
+    "format": "MP3",
     "quality": "",
     "filename": "11 - Mozart - Piano Concerto No. 20 - II. Romance.flac",
     "status": "no_direct_url"
@@ -170,14 +170,14 @@
     "title": "Symphony No. 40",
     "movement": "I. Molto Allegro",
     "performer": "",
-    "source": "Musopen",
-    "source_page": "https://musopen.org/music/",
-    "download_url": "",
-    "license": "Musopen catalog; recording license not yet verified",
-    "format": "FLAC",
-    "quality": "",
-    "filename": "12 - Mozart - Symphony No. 40 - I. Molto Allegro.flac",
-    "status": "no_direct_url"
+    "source": "Internet Archive",
+    "source_page": "https://archive.org/details/MozartSymphonyNo.40",
+    "download_url": "https://archive.org/download/MozartSymphonyNo.40/01.I.AllegroModerato.mp3",
+    "license": "http://creativecommons.org/licenses/by-nc-sa/3.0/ | MOZART: Symphony No. 40 in G minor, K. 550 London Philharmonic Orchestra Sir Thomas Beecham, conductor Columbia 78rpm Set M-316 (CAX 7926 - 7931) Recorded in 1937 Digital transfer by F. Reeder [Improved transfer & higher bit rate - 9/13]",
+    "format": "MP3",
+    "quality": "MP3 (10931579 bytes)",
+    "filename": "12 - Mozart - Symphony No. 40 - I. Molto Allegro.mp3",
+    "status": "mp3_only"
   },
   {
     "track_number": "13",
@@ -185,14 +185,14 @@
     "title": "Nocturne Op. 9 No. 2",
     "movement": "",
     "performer": "",
-    "source": "Musopen",
-    "source_page": "https://musopen.org/music/",
-    "download_url": "",
-    "license": "Musopen catalog; recording license not yet verified",
-    "format": "FLAC",
-    "quality": "",
-    "filename": "13 - Chopin - Nocturne Op. 9 No. 2.flac",
-    "status": "no_direct_url"
+    "source": "Internet Archive",
+    "source_page": "https://archive.org/details/Chopin-NocturneOp.9No.2",
+    "download_url": "https://archive.org/download/Chopin-NocturneOp.9No.2/20120420_Chopin_Nocturne_op9-2_amplified.WAV",
+    "license": "http://creativecommons.org/licenses/by-nc-nd/3.0/ | This is me playing Chopin's Nocturne op.9-2 on Yamaha Clavinova CLP-440.",
+    "format": "WAV",
+    "quality": "WAV (44012444 bytes)",
+    "filename": "13 - Chopin - Nocturne Op. 9 No. 2.wav",
+    "status": "mp3_only"
   },
   {
     "track_number": "14",
@@ -234,7 +234,7 @@
     "source_page": "https://musopen.org/music/",
     "download_url": "",
     "license": "Musopen catalog; recording license not yet verified",
-    "format": "FLAC",
+    "format": "MP3",
     "quality": "",
     "filename": "16 - Chopin - Prelude Op. 28 - No. 4.flac",
     "status": "no_direct_url"
@@ -249,7 +249,7 @@
     "source_page": "https://musopen.org/music/",
     "download_url": "",
     "license": "Musopen catalog; recording license not yet verified",
-    "format": "FLAC",
+    "format": "MP3",
     "quality": "",
     "filename": "17 - Rachmaninoff - Piano Concerto No. 2 - II. Adagio sostenuto.flac",
     "status": "no_direct_url"
@@ -279,7 +279,7 @@
     "source_page": "https://musopen.org/music/",
     "download_url": "",
     "license": "Musopen catalog; recording license not yet verified",
-    "format": "FLAC",
+    "format": "MP3",
     "quality": "",
     "filename": "19 - Tchaikovsky - Swan Lake - Scene.flac",
     "status": "no_direct_url"
@@ -294,7 +294,7 @@
     "source_page": "https://musopen.org/music/",
     "download_url": "",
     "license": "Musopen catalog; recording license not yet verified",
-    "format": "FLAC",
+    "format": "MP3",
     "quality": "",
     "filename": "20 - Tchaikovsky - Swan Lake - Dance of the Little Swans.flac",
     "status": "no_direct_url"
@@ -305,14 +305,14 @@
     "title": "Piano Concerto No. 1",
     "movement": "I. Allegro non troppo",
     "performer": "",
-    "source": "Musopen",
-    "source_page": "https://musopen.org/music/",
-    "download_url": "",
-    "license": "Musopen catalog; recording license not yet verified",
-    "format": "FLAC",
-    "quality": "",
-    "filename": "21 - Tchaikovsky - Piano Concerto No. 1 - I. Allegro non troppo.flac",
-    "status": "no_direct_url"
+    "source": "Internet Archive",
+    "source_page": "https://archive.org/details/TCHAIKOVSKYPianoConcertoNo.1-Horowitz-NEWTRANSFER",
+    "download_url": "https://archive.org/download/TCHAIKOVSKYPianoConcertoNo.1-Horowitz-NEWTRANSFER/01.I.AllegroNonTroppoEMoltoMaestosoAllegroConSpirito.mp3",
+    "license": "http://creativecommons.org/licenses/by-nc-sa/3.0/ | TCHAIKOVSKY: Concerto No. 1 in B Minor for Piano and Orchestra, Op. 23<br /><br />Vladimir Horowitz, piano<br />New York Philharmonic Orchestra<br />George Szell, conductor<br /><br />I. Allegro non troppo e molto maestoso; Allegro con spirito<br />II. Andantino semplice; Prestissimo<br />III. Allegro con fuoco<br /><br />Recorded in performance in New York, May 4, 1952<br />Digital transfer by F. Reeder<br />(High bit rate)<br />",
+    "format": "MP3",
+    "quality": "MP3 (23713398 bytes)",
+    "filename": "21 - Tchaikovsky - Piano Concerto No. 1 - I. Allegro non troppo.mp3",
+    "status": "mp3_only"
   },
   {
     "track_number": "22",
@@ -324,7 +324,7 @@
     "source_page": "https://musopen.org/music/",
     "download_url": "",
     "license": "Musopen catalog; recording license not yet verified",
-    "format": "FLAC",
+    "format": "MP3",
     "quality": "",
     "filename": "22 - Tchaikovsky - 1812 Overture - Finale.flac",
     "status": "no_direct_url"
@@ -369,7 +369,7 @@
     "source_page": "https://musopen.org/music/",
     "download_url": "",
     "license": "Musopen catalog; recording license not yet verified",
-    "format": "FLAC",
+    "format": "MP3",
     "quality": "",
     "filename": "25 - Dvorak - Symphony No. 9 - IV. Allegro con fuoco.flac",
     "status": "no_direct_url"
